@@ -1,0 +1,18 @@
+
+妙味课堂-视频问题解答-跨域	21:12
+
+什么是JS的跨域？
+AJAX的XMLHttpRequest()
+子域和主域之间的情况
+服务器代理：XMLHttpRequest代理文件
+script标签：jsonp
+jsonp的含意：json+padding(内填充原理)
+js执行问题
+封装createJS函数
+动态生成函数名
+百度用使用的jsonp
+location.hash方式：iframe
+window.name方式
+flash方式
+html5的postMessage方式
+

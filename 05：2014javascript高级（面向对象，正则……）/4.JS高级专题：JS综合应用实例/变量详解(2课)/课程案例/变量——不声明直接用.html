@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+//如果不声明，就直接使用一个“局部变量”，那么这个变量会变成全局的
+
+function aaa()
+{
+	a=12;	//全局变量
+}
+
+function bbb()
+{
+	alert(a);
+}
+
+aaa();
+bbb();
+</script>
+</head>
+
+<body>
+</body>
+</html>

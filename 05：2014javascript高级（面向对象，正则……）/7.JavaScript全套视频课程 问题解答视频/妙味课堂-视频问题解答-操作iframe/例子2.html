@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var aInput = document.getElementsByTagName('input');
+	var oIframe = document.getElementById('iframe1');
+	
+	function changeHeight(){
+		
+		setTimeout(function(){
+			oIframe.height = oIframe.contentWindow.document.body.offsetHeight;
+		},100);
+		
+	}
+	changeHeight();
+	
+	aInput[0].onclick = function(){
+		oIframe.src = 'iframe4.html';
+		changeHeight();
+	};
+	
+	aInput[1].onclick = function(){
+		oIframe.src = 'iframe5.html';
+		changeHeight();
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="切换1" />
+<input type="button" value="切换2" />
+<iframe id="iframe1" src="iframe4.html" scrolling="no"></iframe>
+</body>
+</html>

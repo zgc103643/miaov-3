@@ -1,0 +1,22 @@
+妙味课堂-HTML5视频教程：history(历史管理)
+
+HTML5中的历史管理：onhashchange、history
+
+什么是历史管理
+HTML5中的历史管理
+彩票球实例
+选择随机数(从35中随机选出7个数)
+HTML5中的onhashchange事件含义
+添加onhashchange事件：window.onhashchange
+去掉地址栏网址中的逗号及及消除未定义的影响
+HTML5中的history
+history.pushState()方法的参数
+window.onpopstate事件
+网址的注意事项
+
+请加QQ群：172193115
+
+
+妙味课堂-HTML5视频：history(历史管理)
+
+HTML5视频 JS视频 妙味课堂 
