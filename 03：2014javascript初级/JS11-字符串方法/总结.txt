@@ -1,8 +1,8 @@
-var str = 'ÃîÎ¶¿ÎÌÃ-WWW.miaov.com';
+var str = 'å¦™å‘³è¯¾å ‚-WWW.miaov.com';
 
-str.charAt(1);			// 'Î¶'
+str.charAt(1);			// 'å‘³'
 str.charCodeAt(1);			// 21619
-String.fromCharCode(22937, 21619);	// 'ÃîÎ¶'
+String.fromCharCode(22937, 21619);	// 'å¦™å‘³'
 
 str.indexOf('m', 4);			// 9
 str.lastIndexOf('o');			// 16
@@ -10,20 +10,13 @@ str.lastIndexOf('o');			// 16
 '1000' < '2'			// true
 '1000' > 2			// true
 
-str.substring(0, 4);			// 'ÃîÎ¶¿ÎÌÃ'
+str.substring(0, 4);			// 'å¦™å‘³è¯¾å ‚'
 str.slice(-3);			// 'com'
 
-str.toUpperCase();			// 'ÃîÎ¶¿ÎÌÃ-WWW.MIAOV.COM'
-str.toLowerCase();			// 'ÃîÎ¶¿ÎÌÃ-www.miaov.com'
+str.toUpperCase();			// 'å¦™å‘³è¯¾å ‚-WWW.MIAOV.COM'
+str.toLowerCase();			// 'å¦™å‘³è¯¾å ‚-www.miaov.com'
 
-str.split('.', 2);			// [ 'ÃîÎ¶¿ÎÌÃ-WWW', 'miaov' ]
+str.split('.', 2);			// [ 'å¦™å‘³è¯¾å ‚-WWW', 'miaov' ]
 
 var arr = [ 'www', 'miaov', 'com' ];
 arr.join('aaa');			// 'www.miaov.com'
-
-
-
-
-
-
-
