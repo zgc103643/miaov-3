@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>无缝滚动-改造</title>
+    <link href="css.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="last">＜</div>
+      <div id="next">＞</div>
+      <ul id="content">
+        <li style="margin-left: 250px; background-color: orange;"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div id="middle">
+        <a href="#"><img src="img/5.png"/></a>
+        <a href="#"><img src="img/1.png"/></a>
+        <a href="#"><img src="img/2.png"/></a>
+        <a href="#"><img src="img/3.png"/></a>
+        <a href="#"><img src="img/4.png"/></a>
+        <a href="#"><img src="img/5.png"/></a>
+        <a href="#"><img src="img/1.png"/></a>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    //获取元素
+    var lastfn = document.getElementById("last");
+    var nextfn = document.getElementById("next");
+    var imgs = document.getElementsByTagName("img");
+    var lis = document.querySelectorAll("#content li")
+    var middle = document.getElementById("middle");
+    var timer = null;
+    var wrap = document.getElementById("wrap");
+    //声明一个计数的量
+    var index = 1;
+    //获得图片的宽度
+    var imgwidth = imgs[0].offsetWidth;
+
+    //声明一个下一页函数
+    function nextPage() {
+      index ++;
+      if(index == 6) {
+        setTimeout(function() {
+          middle.style.transitionDuration = "0s";
+          middle.style.left ="-600px";
+          index = 1;
+        },1000)
+      }
+      for(var i = 0; i < lis.length; i ++) {
+        lis[i].style.backgroundColor = "";
+      }
+      if(index >= 6) {
+        lis[0].style.backgroundColor = "orange";
+      }else {
+        lis[index - 1].style.backgroundColor = "orange";
+      }
+      middle.style.transitionDuration = "1s";
+      middle.style.left = (-1) * index * imgwidth + "px";
+    }
+    //声明一个上一页函数
+    function lastPage() {
+      index --;
+      if(index == 0) {
+        setTimeout(function() {
+          middle.style.transitionDuration = "0s";
+          middle.style.left = "-3000px";
+          index = 5
+        },1000)
+      }
+      for(var i = 0; i <lis.length; i ++) {
+        lis[i].style.backgroundColor = "";
+      }
+      if(index <= 0) {
+        lis[4].style.backgroundColor = "orange";
+      }else {
+        lis[index - 1].style.backgroundColor = "orange";
+      }
+      middle.style.transitionDuration = "1s"
+      middle.style.left = (-1) * index * imgwidth + "px";
+    }
+
+    // 下一张
+    nextfn.onclick = function() {
+      nextPage();
+      timerFn();
+    }
+    // 上一张
+    lastfn.onclick = function() {
+      lastPage();
+      timerFn();
+    }
+
+    // 点击 按钮事件
+    for(var i = 0; i < lis.length; i ++) {
+      lis[i].num = i;
+      lis[i].onclick = function() {
+        timerFn();
+        for(var i = 0; i < lis.length; i ++) {
+          lis[i].style.backgroundColor = "";
+        }
+        index = this.num;
+        this.style.backgroundColor = "orange";
+        middle.style.left = (-1) * index * imgwidth - 600 + "px";
+      }
+    }
+
+    //封装一个定时器
+    function timerFn() {
+      clearInterval(timer);
+      timer = setInterval(function() {
+              nextPage();
+      },2000)
+    }
+
+
+    //鼠标移入停止
+    wrap.onmouseover = function() {
+      clearInterval(timer);
+      lastfn.style.opacity = 1;
+      nextfn.style.opacity = 1;
+    }
+    //鼠标移除开始
+    wrap.onmouseout = function() {
+      timerFn();
+      lastfn.style.opacity = 0;
+      nextfn.style.opacity = 0;
+    }
+
+    timerFn(); // 走起
+  </script>
+</html>

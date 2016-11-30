@@ -20,28 +20,28 @@ window.onload = function () {
 	var t = 0;
 	var str = '';
 	var timer = null;
-	
+
 	aInp[2].onclick = function () {
 		iNew = new Date(aInp[0].value);
 		clearInterval( timer );
-		
+
 		timer = setInterval (function (){
-			
+
 			iNow = new Date();
 			t = Math.floor( ( iNew - iNow ) / 1000 );
-			
+
 			if ( t >= 0 ) {
-				
+
 				str = Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+t%60+'秒';
-			
+
 				aInp[1].value = str;
-				
+
 			} else {
-				
+
 				clearInterval( timer );
-				
+
 			}
-		
+
 		}, 1000);
 	};
 };
@@ -50,10 +50,9 @@ window.onload = function () {
 
 <body>
 
-距离：<input class="t1" type="text" value="November 27,2013 22:3:0" /><br />
+距离：<input class="t1" type="text" value="November 27,2017 22:3:0" /><br />
 还剩：<input class="t1" type="text" />
 <input type="button" value="开始倒计时吧" />
 
 </body>
 </html>
-
